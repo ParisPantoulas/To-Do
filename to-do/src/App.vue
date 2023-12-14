@@ -1,6 +1,19 @@
 <template>
+  <div>
+    <Sidebar />
+  </div>
   <router-view/>
 </template>
+
+<script>
+import Sidebar from '@/components/Sidebar.vue';
+
+export default {
+  name: 'HomeView',
+  components: { Sidebar }
+}
+
+</script>
 
 <style>
 #app {
@@ -8,19 +21,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: rgb(200, 200, 220);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-<nav role="navigation">
+<nav class="navigation">
   <div id="menuToggle"> 
     <input type="checkbox" />
     <span></span>
@@ -7,8 +7,12 @@
     <span></span>
     
     <ul id="menu">
-      <a href="#"><li>Home</li></a>
-      <a href="#"><li>Add plan</li></a>
+      <li>
+        <router-link :to="{ name: 'home'}">Home</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Addplan'}">Add plan</router-link>
+      </li>
     </ul>
   </div>
 </nav>
@@ -25,9 +29,14 @@ export default {
 {
   margin: 0;
   padding: 0;
-  background: #232323;
-  color: #cdcdcd;
   font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+.navigation {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-height: 100vh
 }
 
 #menuToggle
@@ -48,7 +57,7 @@ export default {
 
 #menuToggle a:hover
 {
-  color: tomato;
+  color: rgb(145, 115, 192);
 }
 
 
@@ -59,7 +68,7 @@ export default {
   height: 32px;
   position: absolute;
   top: -7px;
-  left: -5px;
+  left: -15px;
   cursor: pointer;
   opacity: 0;
   z-index: 2; 
@@ -72,7 +81,7 @@ export default {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #cdcdcd;
+  background: rgb(91, 91, 180);
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -109,24 +118,24 @@ export default {
 #menu
 {
   position: absolute;
-  width: 300px;
+  width: 115px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
   
-  background: #ededed;
+  background:  rgb(91, 91, 180);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
 
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s;
 }
 
 #menu li
 {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 #menuToggle input:checked ~ ul

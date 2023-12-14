@@ -1,0 +1,16 @@
+{
+    "plans": [
+        {
+            "id": 1,
+            "title": "Create new homepage banner",
+            "details": "Lorem ipsum AGAIN",
+            "complete": true
+          },
+          {
+            "id": 2,
+            "title": "Make marketing email",
+            "details": "Lorem ipsum",
+            "complete": false
+          }
+    ]
+}
