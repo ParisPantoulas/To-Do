@@ -1,21 +1,31 @@
 <template>
   <div class="home">
-    Home
+    <PlanFilter />
+    <div>
+        <div v-for="plan in plans" :key="plan.id">
+          <Plan :plan="plan"/>
+        </div>
+    </div>
   </div>
-  
 </template>
 
 <script>
-export default {
-  name: 'HomeView',
-}
-</script>
+import Plan from '../components/Plan.vue'
+import PlanFilter from '../components/PlanFilter.vue'
 
-<style>
-.home {
-  background-color: rgb(91, 91, 180);
-  text-align: center;
-  margin-left: 42px;
-  margin-top: -8px;
-}
-</style>
+export default {
+components: { Plan, PlanFilter},
+data() {
+    return {
+      plans: [],
+    };
+},
+mounted() {
+    fetch('http://localhost:3000/plans')
+    .then((res) => res.json())
+    .then((data) => (this.plans = data))
+    .catch((err) => console.log(err));
+},
+methods: {},
+};
+</script>

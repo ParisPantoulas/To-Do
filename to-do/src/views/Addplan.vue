@@ -1,8 +1,4 @@
 <template>
-    <div class="addplan">
-      Add
-    </div>
-    
     <form>
         <label>Title</label>
         <input type="text" v-model="title" required>
