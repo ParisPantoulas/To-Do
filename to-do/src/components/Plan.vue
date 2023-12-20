@@ -8,9 +8,12 @@
         <h2>{{ plan.title }}</h2>
         <div v-if="showDetails">
           <p>{{ plan.details }}</p>
-          <router-link :to="{name: 'EditPlan', params: { id: plan.id}}" class="edit-button">
-            Edit Plan
-          </router-link>
+          <div class="buttons">
+            <button @click="DeletePlan" class="delete-button">Delete</button>
+            <router-link :to="{name: 'EditPlan', params: { id: plan.id}}" class="edit-button">
+              Edit Plan
+            </router-link> 
+          </div>     
         </div>
       </div>
     </div>
@@ -23,6 +26,14 @@ export default {
     return {
       showDetails: false
     }
+  },
+  methods: {
+    DeletePlan() {
+        fetch('http://localhost:3000/plans/' + this.plan.id, { method: 'DELETE' })
+        .then(() => {
+          this.$router.go();
+        })
+      }
   }
 }
 </script>
@@ -70,9 +81,10 @@ export default {
   background-color: #04530e;
 }
 
-.edit-button {
+.edit-button, .delete-button {
   display: inline-block;
   margin-top: 10px;
+  margin-right: 10px;
   padding: 10px 20px;
   background-color: #3498db;
   color: #fff;
@@ -81,9 +93,13 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
-.edit-button:hover {
+.delete-button {
+  width: 100px;
+}
+.edit-button:hover, .delete-button:hover {
   background-color: #2980b9;
 }
 </style>

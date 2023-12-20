@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "1st Plan",
-      "details": "The details of 1st plan (Altered)",
+      "details": "The details of 1st plan (Changed)",
       "complete": true
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "title": "4th Plan",
-      "details": "The details of 4th Plan",
+      "details": "The details of the 4th plan",
       "complete": true,
       "id": 4
     }

@@ -1,5 +1,5 @@
 <template>
-<form @submit.prevent="EditForm">
+<form>
     <label>Title</label>
     <input type="text" v-model="title" required>
     <label>Details</label>
@@ -7,9 +7,7 @@
     <label class="check">Is you plan completed?
         <input type="checkbox" v-model="complete">
     </label>
-    
-    <!--EditForm Button-->
-    <button>Save</button>
+        <button @click="EditForm">Save</button>
 </form>
 
 </template>
@@ -37,13 +35,13 @@ export default {
     },
     methods: {
         EditForm() {
-        fetch('http://localhost:3000/plans/' + this.id, {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ title: this.title, details: this.details, complete: this.complete })
-        }).then(() => {
-          this.$router.push('/')
-        }).catch(err => console.log(err))
+            fetch('http://localhost:3000/plans/' + this.id, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title: this.title, details: this.details, complete: this.complete })
+            }).then(() => {
+            this.$router.push('/')
+            }).catch(err => console.log(err))
         }
     }
 }
