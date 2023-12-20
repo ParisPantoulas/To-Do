@@ -1,16 +1,28 @@
 {
-    "plans": [
-        {
-            "id": 1,
-            "title": "Create new homepage banner",
-            "details": "Lorem ipsum AGAIN",
-            "complete": true
-          },
-          {
-            "id": 2,
-            "title": "Make marketing email",
-            "details": "Lorem ipsum",
-            "complete": false
-          }
-    ]
+  "plans": [
+    {
+      "id": 1,
+      "title": "Create new homepage banner",
+      "details": "Lorem ipsum AGAIN",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "title": "Make marketing email",
+      "details": "Lorem ipsum",
+      "complete": false
+    },
+    {
+      "title": "3rd Plan",
+      "details": "The details of 3rd plan",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "title": "4th Plan",
+      "details": "The details of 4th Plan",
+      "complete": true,
+      "id": 4
+    }
+  ]
 }

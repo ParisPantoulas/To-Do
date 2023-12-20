@@ -1,17 +1,17 @@
 <template>
     <nav class="filter-nav">
-        <button @click="updateFilter('all')" :class=" { active: current === 'all' } ">View All</button>
-        <button @click="updateFilter('completed')" :class=" { active: current === 'completed' } ">Completed</button>
-        <button @click="updateFilter('ongoing')" :class=" { active: current === 'ongoing' } ">Ongoing</button>
+        <button @click="updateFilter('all')" :class=" { active: currentFilter === 'all' } ">View All</button>
+        <button @click="updateFilter('completed')" :class=" { active: currentFilter === 'completed' } ">Completed</button>
+        <button @click="updateFilter('ongoing')" :class=" { active: currentFilter === 'ongoing' } ">Ongoing</button>
     </nav>
 </template>
 
 <script>
 export default {
-    props: ['current'],
+    props: ['currentFilter'],
     methods: {
         updateFilter(by) {
-            this.$emit('filterChange', by)
+            this.$emit('filter', by)
         }
     }
 }
@@ -32,6 +32,7 @@ export default {
     cursor: pointer;
 }
 .filter-nav button.active {
-    color: #555;
+    color:  rgb(91, 91, 180);
+    font-weight: bold;
 }
 </style>
