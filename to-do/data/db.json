@@ -2,14 +2,14 @@
   "plans": [
     {
       "id": 1,
-      "title": "Create new homepage banner",
-      "details": "Lorem ipsum AGAIN",
+      "title": "1st Plan",
+      "details": "The details of 1st plan (Altered)",
       "complete": true
     },
     {
       "id": 2,
-      "title": "Make marketing email",
-      "details": "Lorem ipsum",
+      "title": "2nd Plan",
+      "details": "The details of 2nd plan",
       "complete": false
     },
     {

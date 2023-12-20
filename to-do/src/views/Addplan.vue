@@ -100,8 +100,4 @@ input[type="checkbox"] {
   margin-top: -40px;
   width: auto;
 }
-
-.check {
-  margin-top: 20px;
-}
 </style>
